@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+  <title>Customer management System</title>
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">Klant management</a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/}">home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/customers}">Klant management</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class = "container">
+  <div class = "row">
+    <div class = "col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+      <h1 class = "text-center">Nieuwe klant</h1>
+      <div class = "card-body">
+        <form th:action="@{/customers}" th:object = "${Klant}" method="POST">
+          <div class = "form-group">
+            <label> Klant Voornaam</label>
+            <input
+              input = "text"
+              name = "voornaam"
+              th:field = "*{firstName}"
+              class = "form-control"
+              placeholder = "voer de voornaam van de klant in"/>
+          </div>
+
+            <div class = "form-group">
+              <label> Klant achternaam</label>
+              <input
+                      input = "text"
+                      name = "achternaam"
+                      th:field = "*{lastName}"
+                      class = "form-control"
+                      placeholder = "voer de achternaam van de klant in"/>
+          </div>
+
+          <div class = "form-group">
+            <label> email</label>
+            <input
+                    input = "text"
+                    name = "email"
+                    th:field = "*{email}"
+                    class = "form-control"
+                    placeholder = "voer de email van de klant in"/>
+          </div>
+
+          <div class = "form-group">
+            <label> telefoonnummer</label>
+            <input
+                    input = "text"
+                    name = "telefoonnummer"
+                    th:field = "*{phoneNR}"
+                    class = "form-control"
+                    placeholder = "voer het telefoonnummer van de klant in"/>
+          </div>
+
+          <div class = "box-footer">
+            <button type="submit" class = "btn btn-primary">
+              voer in
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

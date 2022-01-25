@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Autogarage home</title>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+
+    <a class="navbar-brand" href="#">Autogarage</a>
+
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar links -->
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/}">home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/customers}">Klant management</a>
+            </li>
+            <li class="nav-item">
+<!--                <a class="nav-link" th:href="@{/cars.html}">Auto management</a>-->
+                <a class="nav-link" th:href="@{/cars}">Auto management</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class ="container">
+    <div class="row">
+        <h1> Lijst auto</h1>
+    </div>
+    <div class = "row">
+
+    </div>
+    <table class = "table table-striped table-bordered">
+        <thead class = "table-dark">
+        <tr>
+            <th>Merk auto</th>
+            <th>Model auto</th>
+            <th>Kenteken</th>
+            <th>Klant Id</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+<!--        <tr th:each = "car: ${car}">-->
+<!--            <td th:text = "${car.merk}"></td>-->
+<!--            <td th:text = "${car.model}"></td>-->
+<!--            <td th:text = "${car.registrationplate}"></td>-->
+<!--            <td th:text = "${car.getCustomer().getId()}"></td>-->
+<!--        </tr>-->
+
+        <tr th:each = "car: ${cars}">
+            <td th:text = "${car.merk}"></td>
+            <td th:text = "${car.model}"></td>
+            <td th:text = "${car.registrationplate}"></td>
+            <td th:text = "${car.getCustomer().getId()}"></td>
+        </tr>
+        </tbody>
+
+    </table>
+</div>
+
+</body>
+</html>

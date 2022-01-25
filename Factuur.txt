@@ -1,0 +1,39 @@
+Factuur reparatie van klant
+---------------------------------------
+Willem
+van der Bijl
+06-23424224
+---------------------------------------
+Auto
+---------------------------------------
+Audi
+A3
+GHJ-21-J
+---------------------------------------
+Onderdelen
+---------------------------------------
+Omschrijving: Uitlaat
+Prijs per stuk: 100
+Aantal: 1
+Totaalprijs : 100
+
+
+Omschrijving: Remschijf
+Prijs per stuk: 50
+Aantal: 1
+Totaalprijs : 50
+
+
+Omschrijving: Oliefilter
+Prijs per stuk: 20
+Aantal: 1
+Totaalprijs : 20
+
+
+---------------------------------------
+Totaal bedrag: 
+170
+---------------------------------------
+Totaalprijs met btw 21%: 
+205.7
+---------------------------------------

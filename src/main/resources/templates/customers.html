@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer management System</title>
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">Autogarage</a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/}">home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/customers}">Klant management</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/cars}">Auto management</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class ="container">
+  <div class="row">
+    <h1> Lijst Klanten</h1>
+  </div>
+  <div class = "row">
+    <div class = "col-lg-3">
+      <a th:href = "@{/customers/new}" class = "btn btn-primary btn-sm mb-3"> Nieuwe klant</a>
+    </div>
+
+  </div>
+  <table class = "table table-striped table-bordered">
+    <thead class = "table-dark">
+    <tr>
+      <th>Klant voornaam</th>
+      <th>Klant achternaam</th>
+      <th>Klant Email</th>
+      <th>Klant telefoonnummer</th>
+<!--      <th>Actions</th>-->
+      <th>Auto toevoegen</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <tr th:each = "customer: ${customers}">
+      <td th:text = "${customer.firstName}"></td>
+      <td th:text = "${customer.lastName}"></td>
+      <td th:text = "${customer.email}"></td>
+      <td th:text = "${customer.phoneNR}"></td>
+      <td><a th:href="@{/cars/new/{id}(id=${customer.id})}" class="btn btn-primary"><i class="icon-truck"></i></a></td>
+    </tr>
+    </tbody>
+
+  </table>
+</div>
+
+</body>
+</html>
