@@ -76,13 +76,13 @@ public class AutoGarageApplication implements CommandLineRunner {
 		List<PartOrderLineDto> lines = billingRepository.getPartOrderLines(1L);
 
 		//Rollen toevoevegen in database
-		Role roleUser = new Role(ERole.ROLE_USER);
-		Role roleAdmin = new Role(ERole.ROLE_ADMIN);
-		Role roleModerator = new Role(ERole.ROLE_MODERATOR);
+		Role roleRegister = new Role(ERole.ROLE_REGISTER);
+		Role roleMech = new Role(ERole.ROLE_MECH);
+		Role roleBackoffice = new Role(ERole.ROLE_BACKOFFICE);
 
-		roleRepository.save(roleUser);
-		roleRepository.save(roleAdmin);
-		roleRepository.save(roleModerator);
+		roleRepository.save(roleRegister);
+		roleRepository.save(roleMech);
+		roleRepository.save(roleBackoffice);
 
 
 
