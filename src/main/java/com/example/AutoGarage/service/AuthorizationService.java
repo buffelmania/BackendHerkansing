@@ -101,22 +101,31 @@ public class AuthorizationService {
         } else {
             strRoles.forEach(role -> {
                 switch (role) {
-                    case "admin":
-                        Role adminRole = roleRepository.findByName(ERole.ROLE_MECH)
+                    case "register":
+                        Role registerRole = roleRepository.findByName(ERole.ROLE_REGISTER)
                                 .orElseThrow(() -> new RuntimeException(ROLE_NOT_FOUND_ERROR));
-                        roles.add(adminRole);
+                        roles.add(registerRole);
 
                         break;
-                    case "mod":
-                        Role modRole = roleRepository.findByName(ERole.ROLE_BACKOFFICE)
+
+                    case "mech":
+                        Role mechanicRole = roleRepository.findByName(ERole.ROLE_MECH)
                                 .orElseThrow(() -> new RuntimeException(ROLE_NOT_FOUND_ERROR));
-                        roles.add(modRole);
+                        roles.add(mechanicRole);
 
                         break;
-                    default:
-                        Role userRole = roleRepository.findByName(ERole.ROLE_REGISTER)
+                    case "back":
+                        Role backOfficeRole = roleRepository.findByName(ERole.ROLE_BACKOFFICE)
                                 .orElseThrow(() -> new RuntimeException(ROLE_NOT_FOUND_ERROR));
-                        roles.add(userRole);
+                        roles.add(backOfficeRole);
+
+                        break;
+                    /*case "Register":
+                        Role registerRole = roleRepository.findByName(ERole.ROLE_REGISTER)
+                                .orElseThrow(() -> new RuntimeException(ROLE_NOT_FOUND_ERROR));
+                        roles.add(registerRole);
+
+                        break;*/
                 }
             });
         }

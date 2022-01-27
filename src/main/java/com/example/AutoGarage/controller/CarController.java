@@ -4,11 +4,14 @@ package com.example.AutoGarage.controller;
 import com.example.AutoGarage.entity.Car;
 import com.example.AutoGarage.service.Carservice;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
+//  @CrossOrigin(origins = "*")
+@RequestMapping(value = "/")
 public class CarController {
 
     //private final Carservice carService;
@@ -21,6 +24,7 @@ public class CarController {
         this.carService = carService;
     }
 
+    @PreAuthorize("hasRole('ROLE_MECH')")
     @GetMapping("/cars")
     public String listCars(Model model) {
 //        model.addAttribute("Car", carService.getAllCars());
