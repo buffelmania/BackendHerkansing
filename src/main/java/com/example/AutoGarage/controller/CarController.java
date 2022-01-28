@@ -24,7 +24,7 @@ public class CarController {
         this.carService = carService;
     }
 
-    @PreAuthorize("hasRole('ROLE_MECH')")
+    @PreAuthorize("hasAnyRole('ADMIN','MECH')")
     @GetMapping("/cars")
     public String listCars(Model model) {
 //        model.addAttribute("Car", carService.getAllCars());
@@ -33,6 +33,7 @@ public class CarController {
 
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/cars/new/{customerId}")
     public String createCarsFrom(@PathVariable("customerId") long customerId,Model model){
         System.out.println("id van url customer:" + customerId);

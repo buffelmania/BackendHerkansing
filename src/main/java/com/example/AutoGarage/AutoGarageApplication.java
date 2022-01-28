@@ -27,10 +27,10 @@ public class AutoGarageApplication implements CommandLineRunner {
 	private final BillingRepository billingRepository;
 	private final BillingServiceImpl billingService;
 	private final RepairPartLineService repairPartLineService;
-	private final RoleRepository roleRepository;
+
 
 	public AutoGarageApplication(CustomerRepository customerRepository,
-								 CarRepository carrepository, PartRepository partRepository, RepairService repairService, BillingRepository billingRepository, BillingServiceImpl billingService, RepairPartLineService repairPartLineService, RoleRepository roleRepository) {
+								 CarRepository carrepository, PartRepository partRepository, RepairService repairService, BillingRepository billingRepository, BillingServiceImpl billingService, RepairPartLineService repairPartLineService) {
 		this.customerRepository = customerRepository;
 		this.carrepository = carrepository;
 		this.partRepository = partRepository;
@@ -38,7 +38,7 @@ public class AutoGarageApplication implements CommandLineRunner {
 		this.billingRepository = billingRepository;
 		this.billingService = billingService;
 		this.repairPartLineService = repairPartLineService;
-		this.roleRepository = roleRepository;
+
 	}
 
 	public static void main(String[] args) {
@@ -75,14 +75,7 @@ public class AutoGarageApplication implements CommandLineRunner {
 
 		List<PartOrderLineDto> lines = billingRepository.getPartOrderLines(1L);
 
-		//Rollen toevoevegen in database
-		Role roleRegister = new Role(ERole.ROLE_REGISTER);
-		Role roleMech = new Role(ERole.ROLE_MECH);
-		Role roleBackoffice = new Role(ERole.ROLE_BACKOFFICE);
 
-		roleRepository.save(roleRegister);
-		roleRepository.save(roleMech);
-		roleRepository.save(roleBackoffice);
 
 
 

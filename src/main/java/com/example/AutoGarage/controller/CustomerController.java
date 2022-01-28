@@ -8,7 +8,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-//@CrossOrigin(origins = "*")
 @RequestMapping(value = "/")
 public class CustomerController {
 
@@ -18,7 +17,7 @@ public class CustomerController {
         this.customerServiceImpl = customerServiceImpl;
     }
 
-    @PreAuthorize("hasRole('ROLE_REGISTER')")
+    @PreAuthorize("hasAnyRole('ADMIN','MECH')")
     @GetMapping("/customers")
     public String listCustomers(Model model) {
         model.addAttribute("customers", customerServiceImpl.getAllCustomers());
@@ -26,7 +25,7 @@ public class CustomerController {
 
     }
 
-
+    @PreAuthorize("hasAnyRole('ADMIN')")
     @GetMapping("/customers/new")
     public String createCustomersForm(Model model){
         Customer customer = new Customer();
