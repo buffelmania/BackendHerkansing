@@ -17,11 +17,11 @@ public class BillingController {
         this.billingService = billingService;
     }
 
-    @PreAuthorize("hasRole('ROLE_BACKOFFICE')")
+    @PreAuthorize("hasAnyRole('ADMIN')")
     @GetMapping(path = "factuur/{repairId}")
     public ResponseEntity<?> createInvoice(@PathVariable Long repairId) throws IOException {
         billingService.writeInvoice(repairId);
 
-        return ResponseEntity.ok("Factuur gegenereerd in bestand op de computer in text format");
+        return ResponseEntity.ok("Factuur gegenereerd in bestand op de computer in intellij in txt format");
     }
 }

@@ -10,11 +10,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-//  @CrossOrigin(origins = "*")
 @RequestMapping(value = "/")
 public class CarController {
 
-    //private final Carservice carService;
+
     private Carservice carService;
 
 
