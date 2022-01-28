@@ -14,11 +14,6 @@ public class Billing {
     @Column(name = "TotalCosts", nullable = false)
     private String totalCosts;
 
-//    @OneToOne
-//    private Repair repair;
-
-//    @OneToOne
-//    private CustomerContact customerContact;
 
     public Billing() {
 
@@ -46,20 +41,6 @@ public class Billing {
         this.totalCosts = totalCosts;
     }
 
-//    public Repair getRepair() {
-//        return repair;
-//    }
-//
-//    public void setRepair(Repair repair) {
-//        this.repair = repair;
-//    }
 
-//    public CustomerContact getCustomerContact() {
-//        return customerContact;
-//    }
-//
-//    public void setCustomerContact(CustomerContact customerContact) {
-//        this.customerContact = customerContact;
-//    }
 }
 

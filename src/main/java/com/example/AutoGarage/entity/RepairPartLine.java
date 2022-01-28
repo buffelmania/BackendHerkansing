@@ -20,8 +20,7 @@ public class RepairPartLine {
 
     private Integer totalPrice;
 
-//    @JsonIdentityInfo(generator= ObjectIdGenerators.PropertyGenerator.class, property="id")
-//    @JsonIdentityReference(alwaysAsId=true)
+
     @JsonIdentityInfo(generator= ObjectIdGenerators.PropertyGenerator.class, property="id")
     @JsonIdentityReference(alwaysAsId=true)
     @ManyToOne(cascade = CascadeType.MERGE)

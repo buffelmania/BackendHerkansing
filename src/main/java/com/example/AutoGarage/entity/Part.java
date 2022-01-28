@@ -1,7 +1,7 @@
 package com.example.AutoGarage.entity;
 
 import javax.persistence.*;
-import java.util.List;
+
 
 @Entity(name = "Part")
 @Table(name = "Part")

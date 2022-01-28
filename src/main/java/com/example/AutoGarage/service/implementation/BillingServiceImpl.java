@@ -25,8 +25,8 @@ public class BillingServiceImpl {
 
     public void writeInvoice(Long repairId) throws IOException {
 
-
-//        List<PartOrderLineDto> partOrderLineDtoList = billingRepository.getPartOrderLines(customerDto.getId());
+        //Deze zorgt voor het opmaken van de factuur. De factuur wordt in een .txt bestand uitgedraaid in intellij zelf.
+        //In de buurt van het POM.xml bestand.
         List<PartOrderLineDto> partOrderLineDtoList = billingRepository.getPartOrderLines(repairId);
         Repair repair = repairRepository.getById(repairId);
         Long carId = repair.getCar().getId();

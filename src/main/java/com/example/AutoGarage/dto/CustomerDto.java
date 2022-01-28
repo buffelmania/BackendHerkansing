@@ -1,12 +1,6 @@
 package com.example.AutoGarage.dto;
 
-import com.example.AutoGarage.entity.Car;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.validation.constraints.Email;
 
 
 public class CustomerDto {

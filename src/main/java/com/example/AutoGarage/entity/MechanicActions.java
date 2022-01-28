@@ -16,8 +16,6 @@ public class MechanicActions {
     @Column(name = "prijs_monteuracties")
     private Double price;
 
-//    @ManyToOne
-//    private Repair repair;
 
 
 
@@ -55,11 +53,5 @@ public class MechanicActions {
         this.price = price;
     }
 
-//    public Repair getRepair() {
-//        return repair;
-//    }
-//
-//    public void setRepair(Repair repair) {
-//        this.repair = repair;
-//    }
+
 }

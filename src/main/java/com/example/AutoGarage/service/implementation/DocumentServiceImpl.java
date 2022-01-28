@@ -24,10 +24,6 @@ public class DocumentServiceImpl implements DocumentService {
     @Override
     public List<Document> getAllDocuments(){return documentRepository.findAll();}
 
-//    @Override
-//    public Document saveDocuments(Long customerId, Document document){
-//        return documentRepository.save(document);
-//    }
 
     @Override
     public Document saveDocuments(Long customerId, MultipartFile file) throws IOException{

@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface DocumentService {
     List<Document>getAllDocuments();
-//    Document saveDocuments(Long customerId, Document document);
+
     Document saveDocuments(Long customerId, MultipartFile file) throws IOException;
     Document store(Long customerId, MultipartFile file) throws IOException;
 }

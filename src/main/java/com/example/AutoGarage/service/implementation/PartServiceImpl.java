@@ -1,7 +1,6 @@
 package com.example.AutoGarage.service.implementation;
 
 import com.example.AutoGarage.entity.Part;
-import com.example.AutoGarage.repository.DocumentRepository;
 import com.example.AutoGarage.repository.PartRepository;
 import com.example.AutoGarage.service.PartService;
 import org.springframework.beans.factory.annotation.Autowired;

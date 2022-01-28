@@ -25,8 +25,7 @@ public class Repair {
     @OneToMany(mappedBy= "repair",orphanRemoval = true)
     private List<RepairPartLine> repairPartLines;
 
-//    @OneToMany(mappedBy = "repair")
-//    private List<MechanicActions> mechanicActions;
+
 
     public Repair(){}
 
@@ -46,13 +45,7 @@ public class Repair {
         this.car = car;
     }
 
-//    public List<MechanicActions> getMechanicActions() {
-//        return mechanicActions;
-//    }
-//
-//    public void setMechanicActions(List<MechanicActions> mechanicActions) {
-//        this.mechanicActions = mechanicActions;
-//    }
+
 }
 
 
